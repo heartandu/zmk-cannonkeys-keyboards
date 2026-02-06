@@ -23,7 +23,7 @@
 
         lcw: layer_caps_word {
             compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_CAPS_WORD";
+            display-name = "Layer/Caps Word";
             bindings = <&mo>, <&caps_word>;
 
             #binding-cells = <2>;
@@ -32,13 +32,13 @@
             flavor = "balanced";
         };
 
-        gresc_mod: gresc_mod {
+        gresc: grave_escape {
             compatible = "zmk,behavior-mod-morph";
-            label = "GRESC_MOD";
+            display-name = "Grave Escape";
             bindings = <&kp ESC>, <&kp GRAVE>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_LGUI|MOD_RSFT|MOD_RGUI)>;
+            mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
             keep-mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
@@ -49,7 +49,7 @@
         mac_base_layer {
             display-name = "Base Mac";
             bindings = <
-&gresc_mod  &kp N1    &kp N2  &kp N3    &kp N4  &kp N5  &kp N6           &kp N7  &kp N8  &kp N9     &kp N0    &kp MINUS  &kp EQUAL  &kp BSPC            &kp DEL
+&gresc      &kp N1    &kp N2  &kp N3    &kp N4  &kp N5  &kp N6           &kp N7  &kp N8  &kp N9     &kp N0    &kp MINUS  &kp EQUAL  &kp BSPC            &kp DEL
 &kp TAB     &kp Q     &kp W   &kp E     &kp R   &kp T   &kp Y            &kp U   &kp I   &kp O      &kp P     &kp LBKT   &kp RBKT             &kp BSLH  &kp PG_UP
 &lcw 1 0    &kp A     &kp S   &kp D     &kp F   &kp G   &kp H            &kp J   &kp K   &kp L      &kp SEMI  &kp SQT                         &kp RET   &kp PG_DN
 &kp LSHFT             &kp Z   &kp X     &kp C   &kp V   &kp B            &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH   &kp RSHFT            &kp UP    &kp END
@@ -73,7 +73,7 @@
         windows_base_layer {
             display-name = "Base Win";
             bindings = <
-&gresc_mod  &kp N1    &kp N2  &kp N3    &kp N4  &kp N5  &kp N6           &kp N7  &kp N8  &kp N9     &kp N0    &kp MINUS  &kp EQUAL  &kp BSPC            &kp DEL
+&gresc      &kp N1    &kp N2  &kp N3    &kp N4  &kp N5  &kp N6           &kp N7  &kp N8  &kp N9     &kp N0    &kp MINUS  &kp EQUAL  &kp BSPC            &kp DEL
 &kp TAB     &kp Q     &kp W   &kp E     &kp R   &kp T   &kp Y            &kp U   &kp I   &kp O      &kp P     &kp LBKT   &kp RBKT             &kp BSLH  &kp PG_UP
 &lcw 3 0    &kp A     &kp S   &kp D     &kp F   &kp G   &kp H            &kp J   &kp K   &kp L      &kp SEMI  &kp SQT                         &kp RET   &kp PG_DN
 &kp LSHFT             &kp Z   &kp X     &kp C   &kp V   &kp B            &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH   &kp RSHFT            &kp UP    &kp END
