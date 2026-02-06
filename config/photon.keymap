@@ -10,8 +10,12 @@
 #include <dt-bindings/zmk/rgb.h>
 
 / {
+    &mt {
+        flavor = "balanced";
+    };
+
     behaviors {
-        layer_caps_word: layer_caps_word {
+        lcw: layer_caps_word {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_CAPS_WORD";
             bindings = <&mo>, <&caps_word>;
@@ -19,6 +23,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
+            flavor = "balanced";
         };
 
         gresc_mod: gresc_mod {
@@ -38,11 +43,11 @@
         mac_base_layer {
             display-name = "Base Mac";
             bindings = <
-&gresc_mod            &kp N1    &kp N2  &kp N3    &kp N4  &kp N5  &kp N6           &kp N7  &kp N8  &kp N9     &kp N0    &kp MINUS  &kp EQUAL  &kp BSPC            &kp DEL
-&kp TAB               &kp Q     &kp W   &kp E     &kp R   &kp T   &kp Y            &kp U   &kp I   &kp O      &kp P     &kp LBKT   &kp RBKT             &kp BSLH  &kp PG_UP
-&layer_caps_word 1 0  &kp A     &kp S   &kp D     &kp F   &kp G   &kp H            &kp J   &kp K   &kp L      &kp SEMI  &kp SQT                         &kp RET   &kp PG_DN
-&kp LSHFT                       &kp Z   &kp X     &kp C   &kp V   &kp B            &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH   &kp RSHFT            &kp UP    &kp END
-&kp LCTRL             &kp LALT          &kp LCMD                  &mt LCTRL SPACE                             &kp RCMD  &mo 1                 &kp LEFT  &kp DOWN  &kp RIGHT
+&gresc_mod  &kp N1    &kp N2  &kp N3    &kp N4  &kp N5  &kp N6           &kp N7  &kp N8  &kp N9     &kp N0    &kp MINUS  &kp EQUAL  &kp BSPC            &kp DEL
+&kp TAB     &kp Q     &kp W   &kp E     &kp R   &kp T   &kp Y            &kp U   &kp I   &kp O      &kp P     &kp LBKT   &kp RBKT             &kp BSLH  &kp PG_UP
+&lcw 1 0    &kp A     &kp S   &kp D     &kp F   &kp G   &kp H            &kp J   &kp K   &kp L      &kp SEMI  &kp SQT                         &kp RET   &kp PG_DN
+&kp LSHFT             &kp Z   &kp X     &kp C   &kp V   &kp B            &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH   &kp RSHFT            &kp UP    &kp END
+&kp LCTRL   &kp LALT          &kp LCMD                  &mt LCTRL SPACE                             &kp RCMD  &mo 1                 &kp LEFT  &kp DOWN  &kp RIGHT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -62,18 +67,18 @@
         windows_base_layer {
             display-name = "Base Win";
             bindings = <
-&gresc_mod            &kp N1    &kp N2  &kp N3    &kp N4  &kp N5  &kp N6           &kp N7  &kp N8  &kp N9     &kp N0    &kp MINUS  &kp EQUAL  &kp BSPC            &kp DEL
-&kp TAB               &kp Q     &kp W   &kp E     &kp R   &kp T   &kp Y            &kp U   &kp I   &kp O      &kp P     &kp LBKT   &kp RBKT             &kp BSLH  &kp PG_UP
-&layer_caps_word 3 0  &kp A     &kp S   &kp D     &kp F   &kp G   &kp H            &kp J   &kp K   &kp L      &kp SEMI  &kp SQT                         &kp RET   &kp PG_DN
-&kp LSHFT                       &kp Z   &kp X     &kp C   &kp V   &kp B            &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH   &kp RSHFT            &kp UP    &kp END
-&kp LCTRL             &kp LGUI          &kp LALT                  &mt LCTRL SPACE                             &kp RALT  &mo 3                 &kp LEFT  &kp DOWN  &kp RIGHT
+&gresc_mod  &kp N1    &kp N2  &kp N3    &kp N4  &kp N5  &kp N6           &kp N7  &kp N8  &kp N9     &kp N0    &kp MINUS  &kp EQUAL  &kp BSPC            &kp DEL
+&kp TAB     &kp Q     &kp W   &kp E     &kp R   &kp T   &kp Y            &kp U   &kp I   &kp O      &kp P     &kp LBKT   &kp RBKT             &kp BSLH  &kp PG_UP
+&lcw 3 0    &kp A     &kp S   &kp D     &kp F   &kp G   &kp H            &kp J   &kp K   &kp L      &kp SEMI  &kp SQT                         &kp RET   &kp PG_DN
+&kp LSHFT             &kp Z   &kp X     &kp C   &kp V   &kp B            &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH   &kp RSHFT            &kp UP    &kp END
+&kp LCTRL   &kp LGUI          &kp LALT                  &mt LCTRL SPACE                             &kp RALT  &mo 3                 &kp LEFT  &kp DOWN  &kp RIGHT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         windows_control_layer {
-            display-name = "Function Mac";
+            display-name = "Function Win";
             bindings = <
 &trans  &kp F1  &kp F2             &kp F3           &kp F4      &kp F5  &kp F6        &kp F7        &kp F8         &kp F9         &kp F10    &kp F11  &kp F12  &kp DEL          &kp INS
 &trans  &trans  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp K_MUTE  &trans  &kp LA(LEFT)  &kp LC(LEFT)  &kp LC(RIGHT)  &kp LA(RIGHT)  &kp PSCRN  &trans   &trans            &trans  &trans
