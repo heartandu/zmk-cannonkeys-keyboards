@@ -10,10 +10,6 @@
 #include <dt-bindings/zmk/rgb.h>
 
 / {
-    &mt {
-        flavor = "balanced";
-    };
-
     behaviors {
         lcw: layer_caps_word {
             compatible = "zmk,behavior-hold-tap";
@@ -34,6 +30,10 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_LGUI|MOD_RSFT|MOD_RGUI)>;
             keep-mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        &mt {
+            flavor = "balanced";
         };
     };
 
