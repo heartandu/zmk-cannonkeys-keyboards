@@ -31,10 +31,6 @@
             mods = <(MOD_LSFT|MOD_LGUI|MOD_RSFT|MOD_RGUI)>;
             keep-mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-
-        &mt {
-            flavor = "balanced";
-        };
     };
 
     keymap {
